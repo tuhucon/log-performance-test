@@ -32,14 +32,14 @@
         <appender-ref ref="FILE"/>
         <queueSize>500</queueSize>
         <maxFlushTime>3000</maxFlushTime>
-        <neverBlock>false</neverBlock>
+        <neverBlock>true</neverBlock>
     </appender>
 
     <appender name="ASYNC500_CONSOLE" class="ch.qos.logback.classic.AsyncAppender">
         <appender-ref ref="CONSOLE"/>
         <queueSize>500</queueSize>
         <maxFlushTime>3000</maxFlushTime>
-        <neverBlock>false</neverBlock>
+        <neverBlock>true</neverBlock>
     </appender>
 
     <springProfile name="local">
