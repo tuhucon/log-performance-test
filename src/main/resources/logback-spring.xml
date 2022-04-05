@@ -15,8 +15,10 @@
     <springProperty name="LOG_PATH" source="logging.path" defaultValue="logs"/>
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <encoder>
-            <pattern>${FILE_LOG_PATTERN}</pattern>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class = "com.example.logperformancetest.MaskingPatternLayout">
+                <pattern>${FILE_LOG_PATTERN}</pattern>
+            </layout>
         </encoder>
         <file>${LOG_PATH}/${springAppName}.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
